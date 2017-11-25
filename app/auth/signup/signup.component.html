@@ -1,0 +1,34 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Sign up"></Label>
+</ActionBar>
+
+
+    <GridLayout verticalAlign="center"  [formGroup]="signupForm" class="form" class="backgroundImg p-t-10 p-b-10 p-l-25 p-r-25" rows="60, auto, auto,auto, auto,auto,30, auto"
+        col="*">
+        <Image row="1" height="100" src="res://greenlogo"></Image>
+
+        <TextField formControlName="name" row="2" class="bw-input m-t-10 m-b-10 m-l-15 m-r-15" hint="Name" keyboardType="email" autocorrect="false"
+            autocapitalization="none"></TextField>
+
+        <TextField formControlName="email" row="3" class="bw-input m-t-10 m-b-10 m-l-15 m-r-15" hint="Email Address" keyboardType="email"
+            autocorrect="false" autocapitalization="none"></TextField>
+
+        <TextField formControlName="password" row="4" class="bw-input m-t-10 m-b-10 m-l-15 m-r-15" hint="Password" secure="true"
+            autocorrect="false" autocapitalization="none"></TextField>
+
+
+        <TextField formControlName="confPassword" row="5" class="bw-input m-t-10 m-b-10 m-l-15 m-r-15" hint="Confirm Password" secure="true"
+            autocorrect="false" autocapitalization="none"></TextField>
+
+
+        <Gradient class="m-t-60 m-b-10 m-l-16 m-r-16" row="7" direction="to left" colors="#00A193, #1e5e59">
+
+
+            <Button row="7"  borderRadius='0' class=" bw-btn " text="SIGN UP" (tap)="onSignupButtonTap()"></Button>
+
+
+
+        </Gradient>
+
+
+    </GridLayout>

@@ -1,4 +1,4 @@
-<ActionBar class="action-bar">
+<ActionBar class="action-bar long-action-bar">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android because ActionItems are shown on the right side of the ActionBar
     -->
@@ -9,7 +9,9 @@
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
-    <Label class="action-bar-title" text="Home"></Label>
+    <Image src="res://logo" class="action-image"></Image>
+    
+        <Label class="action-bar-title" text="Home"></Label>
 </ActionBar>
 
 <!--
