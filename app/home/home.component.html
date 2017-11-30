@@ -36,21 +36,31 @@ it shouldn't have any other siblings other than the <ActionBar> component.
     Use the tkMainContent directive to display the content of the page when you have an app drawer.
     -->
     <GridLayout class="backgroundImg"  columns="*,*" rows="*,*" class="page page-content" tkMainContent>
-            <StackLayout class="item-container" col="0" row="0" >
-                <Image src="~/assets/imgs/records.png"></Image>
-                <Label text="Records" textWrap="true"></Label>
-            </StackLayout>
-            <StackLayout  class="item-container" col="1" row="0">
-                <Image src="~/assets/imgs/savings.png"></Image>
-                <Label text="Savings" textWrap="true"></Label>
-            </StackLayout>
+            <CardView class="cardStyle" elevation="40" radius="1" >         
+                <StackLayout class="item-container" col="0" row="0" >
+                    <Image src="~/assets/imgs/records.png"></Image>
+                    <Label text="Records" textWrap="true"></Label>
+                </StackLayout>
+            </CardView>
+            <CardView class="cardStyle" elevation="40" radius="1" >         
+                <StackLayout  class="item-container" col="1" row="0">
+                    <Image src="~/assets/imgs/savings.png"></Image>
+                    <Label text="Savings" textWrap="true"></Label>
+                </StackLayout>
+            </CardView>
+
+            <CardView class="cardStyle" elevation="40" radius="1" >          
             <StackLayout class="item-container" class="item-container"  col="0" row="1">
                 <Image src="~/assets/imgs/transfers.png"></Image>
                 <Label text="Transfers" textWrap="true"></Label>
             </StackLayout>
+            </CardView>
+
+            <CardView class="cardStyle" elevation="40" radius="1" >       
             <StackLayout   class="item-container" col="1" row="1" >
                 <Image src="~/assets/imgs/wallet.png"></Image>
                 <Label text="Wallet" textWrap="true"></Label>
             </StackLayout>
+            </CardView>
     </GridLayout>
 </RadSideDrawer>

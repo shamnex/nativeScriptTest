@@ -1,9 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { EventData } from "data/observable";
 import { RouterExtensions } from "nativescript-angular/router/router-extensions";
+import { Observable } from "rxjs";
 import { Page } from "ui/page";
 import { TextField } from "ui/text-field";
+
+import { BiometricIDAvailableResult, FingerprintAuth } from "nativescript-fingerprint-auth";
+
 
 @Component({
     selector: "Login",
@@ -11,10 +14,10 @@ import { TextField } from "ui/text-field";
     templateUrl: "./login.component.html"
 })
 export class LoginComponent implements OnInit {
-    loginForm: FormGroup;
-    email: string;
-    password: string;
-
+    private loginForm: FormGroup;
+    private email: string;
+    private password: string;
+    private fingerprintAuth: FingerprintAuth;
     constructor(private _fb: FormBuilder,
                 private routerEx: RouterExtensions
     ) {
@@ -24,30 +27,46 @@ export class LoginComponent implements OnInit {
         this.loginForm = this._fb.group({
             email: ["", Validators.required],
             password: ["", Validators.required]
-          });
+        });
+
+        this.fingerprintAuth = new FingerprintAuth();
+
     }
 
     ngOnInit(): void {
-        /* ***********************************************************
-        * Use the "ngOnInit" handler to initialize data for this component.
-        *************************************************************/
+        //
     }
-    onLoginWithSocialProviderButtonTap(): void {
-        /* ***********************************************************
-        * For log in with social provider you can add your custom logic or
-        * use NativeScript plugin for log in with Facebook
-        * http://market.nativescript.org/plugins/nativescript-facebook
-        *************************************************************/
+
+    onPasswordFocus() {
+        const promise = this.fingerprintAuth.available();
+        Observable.fromPromise(promise)
+            .switchMap((result: BiometricIDAvailableResult) => Observable.of(result)).subscribe((x) => {
+                return x.any ? this.veryfingerprint() : false;
+            });
+    }
+
+    veryfingerprint() {
+        Observable.fromPromise(this.fingerprintAuth.verifyFingerprint({})).subscribe(
+            () => {
+                this.gotoHome();
+            },
+            () => {
+                console.log("Fingerprint NOT OK");
+            });
+    }
+
+    gotoHome() {
+        this.routerEx.navigate(["home"], {
+            transition: {
+                name: "slide",
+                duration: 500,
+                curve: "ease"
+            }
+        });
     }
 
     onSigninButtonTap(): void {
-         console.dir(this.loginForm.value);
-         this.routerEx.navigate(["home"], {  
-             transition: {
-            name: "slide",
-            duration: 500,
-            curve: "ease"
-        }});
+        console.dir(this.loginForm.value);
 
     }
 

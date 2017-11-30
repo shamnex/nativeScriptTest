@@ -9,6 +9,9 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { NativeScriptFormsModule, registerElement } from "nativescript-angular";
 registerElement("Gradient", () => require("nativescript-gradient").Gradient);
 
+import * as elementRegistryModule from "nativescript-angular/element-registry";
+elementRegistryModule.registerElement("CardView", () => require("nativescript-cardview").CardView);
+
 
 @NgModule({
     bootstrap: [
