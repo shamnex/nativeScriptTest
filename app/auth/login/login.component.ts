@@ -40,18 +40,21 @@ export class LoginComponent implements OnInit {
     onPasswordFocus() {
         const promise = this.fingerprintAuth.available();
         Observable.fromPromise(promise)
-            .switchMap((result: BiometricIDAvailableResult) => Observable.of(result)).subscribe((x) => {
+            .switchMap((result: BiometricIDAvailableResult) => Observable.of(result))
+            .subscribe((x) => {
                 return x.any ? this.veryfingerprint() : false;
             });
     }
 
     veryfingerprint() {
-        Observable.fromPromise(this.fingerprintAuth.verifyFingerprint({})).subscribe(
+        Observable.fromPromise(this.fingerprintAuth.
+            verifyFingerprintWithCustomFallback({  message: "Scan yer finger" }))
+            .subscribe(
             () => {
                 this.gotoHome();
             },
             () => {
-                console.log("Fingerprint NOT OK");
+                this.routerEx.back();
             });
     }
 
