@@ -1,4 +1,4 @@
-<ActionBar id="long-action-bar" class="action-bar long-action-bar">
+<ActionBar class="action-bar">
         
            <!-- 
     Use the NavigationButton as a side-drawer button in Android because ActionItems are shown on the right side of the ActionBar
@@ -32,28 +32,41 @@ it shouldn't have any other siblings other than the <ActionBar> component.
     
     <!--
     Use the tkMainContent directive to display the content of the page when you have an app drawer.
-    -->
-    <GridLayout class="backgroundImg"  columns="*,*" rows="*,*" class="page page-content" tkMainContent>
-
-        <StackLayout col="0" row="0" class="item-container" col="0" row="0" >
+     -->
+    <GridLayout class="backgroundImg" columns="*,*" rows="*,*,*" class="page page-content" tkMainContent>
+        <Gradient  row="0" 
+        verticalAlignment="center"
+        class="hero"        
+        colSpan="2"
+        direction="to left" colors="#00A193, #1e5e59">
+            
+            <Label
+            textAlignment="center"
+            color="#fff" 
+            width="100%"
+            verticalAlignment="center"
+            text="Welcome, Dangote" textWrap="true"></Label>
+        
+        </Gradient>
+        <StackLayout class="item-container"  col="0" row="1">
             <Image src="~/assets/imgs/records.png"></Image>
             <Label text="Records" textWrap="true"></Label>
         </StackLayout>
-
-            <StackLayout col="1" row="0"  class="item-container" >
-                <Image src="~/assets/imgs/savings.png"></Image>
-                <Label text="Savings" textWrap="true"></Label>
-            </StackLayout>
-
-            <StackLayout  col="0" row="1" class="item-container" class="item-container" >
-                <Image src="~/assets/imgs/transfers.png"></Image>
-                <Label text="Transfers" textWrap="true"></Label>
-            </StackLayout>
     
-            <StackLayout col="1" row="1"    class="item-container" >
-                <Image src="~/assets/imgs/wallet.png"></Image>
-                <Label text="Wallet" textWrap="true"></Label>
-            </StackLayout>
-            
-        </GridLayout>
+        <StackLayout col="1" row="1" class="item-container">
+            <Image src="~/assets/imgs/savings.png"></Image>
+            <Label text="Savings" textWrap="true"></Label>
+        </StackLayout>
+    
+        <StackLayout col="0" row="2" class="item-container" class="item-container">
+            <Image src="~/assets/imgs/transfers.png"></Image>
+            <Label text="Transfers" textWrap="true"></Label>
+        </StackLayout>
+    
+        <StackLayout col="1" row="2" class="item-container">
+            <Image src="~/assets/imgs/wallet.png"></Image>
+            <Label text="Wallet" textWrap="true"></Label>
+        </StackLayout>
+    
+    </GridLayout>
 </RadSideDrawer>

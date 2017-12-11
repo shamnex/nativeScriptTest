@@ -36,11 +36,12 @@ ActionBar .action-bar-title {
     background-size: cover;
 }
 
-.long-action-bar {
-    height: 40%; // background-image: url('res://background');
-    background-size: cover;
-    border-bottom-color: $accent;
-    border-bottom-width: 5;
+.hero{
+    padding: 20;
+    height: 40%;
+    // background-image: url('res://background');
+    width: 100%;
+
 }
 
 .bw-input {

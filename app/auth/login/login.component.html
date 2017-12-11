@@ -1,29 +1,24 @@
-      
-        <GridLayout [formGroup]="loginForm"  class="backgroundImg form" rows="120, 150, auto,auto,30, auto,*, 50" col="*">
-            <Image row="1" height="100" src="res://greenlogo"></Image>
-        
-            <TextField formControlName="email" row="2" class="bw-input m-t-10 m-b-10 m-l-15 m-r-15" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalization="none"
-           ></TextField>
-        
-        <TextField (focus)="onPasswordFocus()" formControlName="password" row="3" class="bw-input m-t-10 m-b-10 m-l-15 m-r-15" hint="Password" secure="true" autocorrect="false" autocapitalization="none"
-            ></TextField>
-        
-            
-            <Gradient  class="m-t-60 m-b-10 m-l-16 m-r-16"  row="5" 
-            direction="to left" colors="#00A193, #1e5e59">
-            
-                <Button 
-                borderColor="transparent" 
-                borderWidth="1" borderRadius='0' class="bw-btn" text="SIGN IN" (tap)="onSigninButtonTap()"></Button>
-                
-            </Gradient>
-            
-            
-            
-                <Gradient  row="7" verticalAlignment="bottom" 
-                direction="to left" colors="#00A193, #1e5e59">
-                    
-                    <!-- <Label
+<GridLayout [formGroup]="loginForm" class="backgroundImg form" rows="120, 150, auto,auto,30, auto,*, 50" col="*">
+    <Image row="1" height="100" src="res://greenlogo"></Image>
+
+    <TextField formControlName="email" row="2" class="bw-input m-t-10 m-b-10 m-l-15 m-r-15" hint="Email Address" keyboardType="email"
+        autocorrect="false" autocapitalization="none"></TextField>
+
+    <TextField (focus)="onPasswordFocus()" formControlName="password" row="3" class="bw-input m-t-10 m-b-10 m-l-15 m-r-15" hint="Password"
+        secure="true" autocorrect="false" autocapitalization="none"></TextField>
+
+
+    <Gradient class="m-t-60 m-b-10 m-l-16 m-r-16" row="5" direction="to left" colors="#00A193, #1e5e59">
+
+        <Button borderColor="transparent" borderWidth="1" borderRadius='0' class="bw-btn" text="SIGN IN" (tap)="onSigninButtonTap()"></Button>
+
+    </Gradient>
+
+
+
+    <Gradient row="7" verticalAlignment="bottom" direction="to left" colors="#00A193, #1e5e59">
+
+        <!-- <Label
                     class=""
                     pageTransition="slide"
                     [nsRouterLink]='["signup"]'
@@ -33,16 +28,10 @@
                     padding="17"
                     text="Don't have an account? SIGN UP" textWrap="true"></Label> -->
 
-                    <Button 
+        <Button pageTransition="slide" [nsRouterLink]='["signup"]' textAlignment="center" width="100%" borderColor="transparent"
+            borderWidth="1" borderRadius='0' class="bw-btn" text="Don't have an account? SIGN UP"></Button>
 
-                    pageTransition="slide"
-                    [nsRouterLink]='["signup"]'
-                    textAlignment="center"
-                    width="100%"
-                    borderColor="transparent" 
-                    borderWidth="1" borderRadius='0' class="bw-btn" text="Don't have an account? SIGN UP"></Button>
-                    
-                
-                </Gradient>
-             
-        </GridLayout>
+
+    </Gradient>
+
+</GridLayout>

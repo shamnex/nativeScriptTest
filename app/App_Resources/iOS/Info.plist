@@ -49,5 +49,8 @@
 	<false/>
 	<key>NSCalendarsUsageDescription</key>
 	<string>This application needs to access your calendar events.</string>
+
+	  <key>NSFaceIDUsageDescription</key>
+  <string>For easy authentication with our app.</string>
 </dict>
 </plist>

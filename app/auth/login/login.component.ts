@@ -42,13 +42,17 @@ export class LoginComponent implements OnInit {
         Observable.fromPromise(promise)
             .switchMap((result: BiometricIDAvailableResult) => Observable.of(result))
             .subscribe((x) => {
-                return x.any ? this.veryfingerprint() : false;
+                if (x.any) {
+                    return x.touch ?
+                     this.useBiometicLogin("touch") :
+                     this.useBiometicLogin("face");
+                }
             });
     }
 
-    veryfingerprint() {
+    useBiometicLogin(biometric: string) {
         Observable.fromPromise(this.fingerprintAuth.
-            verifyFingerprintWithCustomFallback({  message: "Log In With Touch ID" }))
+            verifyFingerprintWithCustomFallback({  message: `Log In With ${biometric} ID` }))
             .subscribe(
             () => {
                 this.gotoHome();
