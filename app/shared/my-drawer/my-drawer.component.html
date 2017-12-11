@@ -24,6 +24,10 @@ Feel free to customize layouts and components to change how your app drawer look
 
             <MyDrawerItem title="Settings" route="/settings" icon="&#xf013;" [isSelected]="isPageSelected('Settings')">
             </MyDrawerItem>
+
+            <MyDrawerItem  class="Sign Out" title="Sign out" [nsRouterLink]="['auth']" clearHistory="true"
+            >
+            </MyDrawerItem>
         </StackLayout>
     </ScrollView>
 </GridLayout>

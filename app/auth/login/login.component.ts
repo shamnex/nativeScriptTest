@@ -15,8 +15,8 @@ import { BiometricIDAvailableResult, FingerprintAuth } from "nativescript-finger
 })
 export class LoginComponent implements OnInit {
     private loginForm: FormGroup;
-    private email: string;
-    private password: string;
+    private user: string;
+    private password: string = "user";
     private fingerprintAuth: FingerprintAuth;
     constructor(private _fb: FormBuilder,
                 private routerEx: RouterExtensions
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
         * Use the constructor to inject app services that you need in this component.
         *************************************************************/
         this.loginForm = this._fb.group({
-            email: ["", Validators.required],
+            user: ["", Validators.required],
             password: ["", Validators.required]
         });
 
@@ -74,7 +74,14 @@ export class LoginComponent implements OnInit {
 
     onSigninButtonTap(): void {
         console.dir(this.loginForm.value);
+        const username = this.loginForm.value.name;
+        const password = this.loginForm.value.password;
 
+        if (username === this.user && password === this.password) {
+            this.gotoHome();
+        } else {
+            alert("Username Or Password Is Incorrect");
+        }
     }
 
 }
