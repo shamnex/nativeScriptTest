@@ -1,5 +1,4 @@
-<Gradient width="100%" direction="to left" colors="#00A193, #1e5e59">
-<ActionBar class="action-bar long-action-bar">
+<ActionBar id="long-action-bar" class="action-bar long-action-bar">
         
            <!-- 
     Use the NavigationButton as a side-drawer button in Android because ActionItems are shown on the right side of the ActionBar
@@ -16,7 +15,6 @@
     
         <Label class="action-bar-title" text="Home"></Label>
     </ActionBar>
-</Gradient>
 <!--
 RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
 Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
@@ -37,33 +35,25 @@ it shouldn't have any other siblings other than the <ActionBar> component.
     -->
     <GridLayout class="backgroundImg"  columns="*,*" rows="*,*" class="page page-content" tkMainContent>
 
-        <CardView  col="0" row="0" class=" cardStyle" elevation="40" radius="1" >                  
-        <StackLayout class="item-container" col="0" row="0" >
+        <StackLayout col="0" row="0" class="item-container" col="0" row="0" >
             <Image src="~/assets/imgs/records.png"></Image>
             <Label text="Records" textWrap="true"></Label>
         </StackLayout>
-        </CardView>
 
-        <CardView col="1" row="0" class=" cardStyle" elevation="40" radius="1" >         
-            <StackLayout  class="item-container" >
+            <StackLayout col="1" row="0"  class="item-container" >
                 <Image src="~/assets/imgs/savings.png"></Image>
                 <Label text="Savings" textWrap="true"></Label>
             </StackLayout>
-        </CardView>
 
-        <CardView col="0" row="1"  class=" cardStyle" elevation="40" radius="1" >         
-            <StackLayout class="item-container" class="item-container" >
+            <StackLayout  col="0" row="1" class="item-container" class="item-container" >
                 <Image src="~/assets/imgs/transfers.png"></Image>
                 <Label text="Transfers" textWrap="true"></Label>
             </StackLayout>
-        </CardView>
     
-        <CardView col="1" row="1"  class="cardStyle" elevation="40" radius="1" >         
-            <StackLayout   class="item-container" >
+            <StackLayout col="1" row="1"    class="item-container" >
                 <Image src="~/assets/imgs/wallet.png"></Image>
                 <Label text="Wallet" textWrap="true"></Label>
             </StackLayout>
             
-        </CardView>
         </GridLayout>
 </RadSideDrawer>

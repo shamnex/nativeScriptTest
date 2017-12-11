@@ -12,3 +12,24 @@
 ActionBar .fa {
     padding: 40px 40px 40px 0;
 }
+#long-action-bar {
+    height: 40%; // background-image: url('res://background');
+    background-size: cover;
+    border-bottom-color: $accent;
+    border-bottom-width: 5;
+}
+
+
+TextField{
+    border-bottom-width: 2;
+    margin-bottom: 40;
+    border-bottom-color: $accent;
+    height: 30;
+}
+.bw-btn {
+    color: #fff;
+    border-color: transparent;
+    border-width: 1;
+    font-size: 14;
+    padding: 17;
+}

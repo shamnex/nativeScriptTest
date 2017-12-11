@@ -1,7 +1,6 @@
       
-        <GridLayout [formGroup]="loginForm" class="form"  class="backgroundImg" rows="120, 150, auto,auto,30, auto,*, 50" col="*">
-            <Image ios:visibility="collapsed" row="1" height="100" src="res://greenlogo"></Image>
-            <Image android:visibility="collapsed" row="1" height="100" ios.src="res://assets/greenlogo"></Image>
+        <GridLayout [formGroup]="loginForm"  class="backgroundImg form" rows="120, 150, auto,auto,30, auto,*, 50" col="*">
+            <Image row="1" height="100" src="res://greenlogo"></Image>
         
             <TextField formControlName="email" row="2" class="bw-input m-t-10 m-b-10 m-l-15 m-r-15" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalization="none"
            ></TextField>
@@ -24,14 +23,24 @@
                 <Gradient  row="7" verticalAlignment="bottom" 
                 direction="to left" colors="#00A193, #1e5e59">
                     
-                    <Label
+                    <!-- <Label
+                    class=""
                     pageTransition="slide"
                     [nsRouterLink]='["signup"]'
                     textAlignment="center"
                     color="#fff" 
                     width="100%"
                     padding="17"
-                    text="Don't have an account? SIGN UP" textWrap="true"></Label>
+                    text="Don't have an account? SIGN UP" textWrap="true"></Label> -->
+
+                    <Button 
+
+                    pageTransition="slide"
+                    [nsRouterLink]='["signup"]'
+                    textAlignment="center"
+                    width="100%"
+                    borderColor="transparent" 
+                    borderWidth="1" borderRadius='0' class="bw-btn" text="Don't have an account? SIGN UP"></Button>
                     
                 
                 </Gradient>

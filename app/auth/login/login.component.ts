@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
     veryfingerprint() {
         Observable.fromPromise(this.fingerprintAuth.
-            verifyFingerprintWithCustomFallback({  message: "Scan yer finger" }))
+            verifyFingerprintWithCustomFallback({  message: "Log In With Touch ID" }))
             .subscribe(
             () => {
                 this.gotoHome();
